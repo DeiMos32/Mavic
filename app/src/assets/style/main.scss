@@ -1,0 +1,137 @@
+@import "utils/libs";
+@import "utils/vars";
+@import "utils/mixins";
+@import "utils/fonts";
+// @import "utils/reset";
+
+html {
+    font-size: $mainFontSize;
+    color: $mainFontColor;
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: $mainFont;
+    font-size: $mainFontSize;
+    font-weight: $mainFontWeight;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: border-box;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin: 0;
+    font-size: inherit;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+ul,
+li {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+
+button {
+    text-transform: uppercase;
+    color: $mainFontColor;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+
+
+
+._container {
+    max-width: $mw + px;
+    margin: 0 auto;
+    padding: 0px 10px;
+    z-index: 1;
+    @media (max-width: $mw1+px) {
+        max-width: 970px;
+    }
+
+    @media (max-width: $mw2+px) {
+        max-width: 750px;
+    }
+
+    @media (max-width: $mw3+px) {
+        max-width: none;
+        padding: 0 10px;
+    }
+}
+
+
+// Global
+
+.page-section {
+    min-height: 100vh;
+    background-image: url('../image/content/section-bg.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    padding: 74px 0px 50px;
+}
+
+.scroll-btn {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 10px;
+    margin: 12px 0px 40px 0px;
+    text-align: center;
+}
+
+.title {
+    font-family: "SFProDisplay";
+    font-size: 44px;
+    font-weight: 400;
+    padding: 130px 0px 0px 23px;
+}
+
+.social {
+    &__list {
+        display: flex;
+        align-items: center;
+        flex-direction: row;
+    }
+}
+
+.social-icon {}
+
+
+.social__link:hover .social-icon {
+    transition: all 0.2s ease;
+    fill-opacity: 1;
+}
+
+
+// Подключение своих SCSS 
+@import "../libs/css/slick";
+
+@import "modules/header";
+@import "modules/top";
+@import "modules/products";
+@import "modules/benefits";
+@import "modules/specifications";
+@import "modules/questions";
+@import "modules/contacts";
+@import "modules/footer";
